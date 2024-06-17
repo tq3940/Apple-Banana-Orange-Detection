@@ -1,0 +1,2 @@
+python scripts\export\exporter_main_v2.py --input_type image_tensor --pipeline_config_path eval-model\My_d3_3_pipeline.config --trained_checkpoint_dir eval-model\ --output_directory eval-model\exported
+
