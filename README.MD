@@ -1,8 +1,8 @@
 # Apple-Banan-Orange Detection
 
 ## 简介
-本项目起源于本人《人工智能原理》一课的大作业，要求识别苹果、香蕉、橙子三种水果，并用IOU、Precision、Recall、mAP四个指标进行评估 ~~(谁拿前三个作为最终指标啊)~~ 。一通搜索下来最终决定拿 TensorFlow Object Detect API V2 来完成。主要参考了官方教程[TensorFlow 2 Object Detection API tutorial
-](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) 以及众多大神博客。本文主要汇总一下对在这期间有用的教程与分享本人在这安装、训练期间遇到的问题以及解决方法，如果有直系学弟学妹明年遇到同款大作业而搜到这个仓库，望对遇到同样问题的同学有所帮助 ~~(真帮到了记得回来给个star
+本项目起源于本人《人工智能原理》一课的大作业，要求识别苹果、香蕉、橙子三种水果，并用IOU、Precision、Recall、mAP四个指标进行评估 ~~(谁拿前3个作为最终指标啊)~~ 。一通搜索下来最终决定拿 TensorFlow Object Detect API V2 来完成。主要参考了官方教程[TensorFlow 2 Object Detection API tutorial
+](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) 以及众多大神博客。由于本人主要负责后端的工作，就只在这分享下后端的一些经验。本文主要汇总一下对在这期间有用的教程与分享本人在这安装、训练期间遇到的问题以及解决方法，如果有直系学弟学妹明年遇到同款大作业而搜到这个仓库，望对遇到同样问题的同学有所帮助 ~~(真帮到了记得回来给个star
 啊喂)~~
 
 <center>damn作业</center>
