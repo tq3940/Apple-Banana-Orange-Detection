@@ -5,7 +5,15 @@
 ](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html) 以及众多大神博客。本文主要汇总一下对在这期间有用的教程与分享本人在这安装、训练期间遇到的问题以及解决方法，如果有直系学弟学妹明年遇到同款大作业而搜到这个仓库，望对遇到同样问题的同学有所帮助 ~~(真帮到了记得回来给个star
 啊喂)~~
 
-### ~~如果有下次，我选择PyTorch~~
+<center>damn作业</center>
+
+![damn作业](damn-image/damn-zuoye.png "damn作业")
+
+
+### <center>~~如果有下次，我选择PyTorch~~</center>
+![dawn-tensoflow](damn-image/damn-tensorflow.png "dawn-tensoflow")
+
+
 
 ### 项目目录
 ```
@@ -83,8 +91,8 @@
 
 - 在本仓库中，我也上传了我们小组收集到的一些数据集，总共应该有将近1w张了吧
  
-  (update) 扔 [阿里云盘](https://www.alipan.com/s/MCydFDCe9gh) 上了 pwd: l4d9  ~~不会用git传大文件qaq~~
-  
+    **(update) 扔 [阿里云盘](https://www.alipan.com/s/MCydFDCe9gh) 上了 pwd: l4d9  ~~不会用git传大文件qaq~~**
+
     image文件夹为图片+xml标注，data文件夹为将图片和标注转换为的TFRecord格式，用来给TensorFlow读入，因为前前后后收集过好几次数据集，因此总共有4个文件夹
 
 - scripts/Pre-process 目录下有本人用来处理数据的一些脚本    
@@ -143,10 +151,20 @@
     [官方文档](https://www.tensorflow.org/guide/mixed_precision?hl=zh-cn) 里说只需写一条全局策略语句就能自动开启，但经本人实测在这里若开启后，内部的一些数学函数却不能支持 `fp16` (貌似是因为输入的连个参数类型不一样)，搜半天也没解决，去官方项目下发了[issue](https://github.com/tensorflow/models/issues/11215)，但到现在还没回...
 
     不过，后来我才发现在4090以上显卡训练，内部矩阵运算会自动开启`TF32`，因此也就不在纠结这个问题了
+    
+5. 本人训练过程
+    <center>训练过程Loss曲线</center>
+
+    ![训练过程Loss曲线](damn-image/训练过程01.png "训练过程Loss曲线")
+
 
 ## 预测推理
 - Predict目录下的脚本均为本人根据官方教程中 [Examples](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/auto_examples/index.html)给的代码修改而来，`CV-predict.py` 为调用摄像头为输入，剩下两个是用图片作为输入，推荐看看`IMG-predict_saved_model.py` ~~(因为其他两个直接copy的，真的屎山)~~
+  
 - 这里有个大坑是：推理时一定要用`saved_model`形式的模型，而不是`checkpoint`形式！！后者比前者满了将近50倍！！
+  
+- 测试预测
+  ![测试预测](damn-image/predict-test.png "测试预测")
 
 ## 评估
 
@@ -154,9 +172,16 @@
   
   当输入checkpoint路径时会切换成评估模式，训练时新开个终端进行评估，它会在每个新checkpoint输出时自动评估，可用tensorboard实时查看指标曲线，关于评估选用的指标，可参考：[关于tensorflow之config--eval_config中metrics_set参数（学习笔记）](https://blog.csdn.net/qq_35975447/article/details/106640709)
 
+
+    <center>训练过程COCO曲线</center>
+
+    ![训练过程COCO曲线](damn-image/训练过程02.png "训练过程COCO曲线")
+
 - 本人写的 `evaluate.py`、`evaluate_util.py`
 
     因为老师~~若至~~要求的 IOU、Precision、Recall、mAP 四个指标用这里面自带的评估搞不出来，与其去改它源码，不如自己写个 ~~虽然我写的真是一堆屎山~~
+
+    ![若至指标](damn-image/metric.png "若至指标")
 
     关于`TP、FP、FN、FP`、`IOU`、`Precision`、`Recall`、`AP、mAP`等指标的含义，推荐参考：
     
@@ -180,6 +205,12 @@
 
 
     其他细节可以看看 `evaluate_util.py` 文件，但这主要是为应付这次的任务写的一坨，应该不会有人拿它来实际评估吧
+
+    <center>评估结果</center>
+
+    ![评估结果](damn-image/test-reslut.png "评估结果")
+    <font size=1> ~~数据这么好看是因为把老师要求的测试集扔进去练了~~</font>
+
 
 ## 最后
 
