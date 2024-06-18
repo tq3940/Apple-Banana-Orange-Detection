@@ -91,7 +91,7 @@
 
 - 在本仓库中，我也上传了我们小组收集到的一些数据集，总共应该有将近1w张了吧
  
-    **~~(update) 扔 [阿里云盘](https://www.alipan.com/s/MCydFDCe9gh) 上了 pwd: l4d9  不会用git传大文件qaq~~**
+    **~~(update) 扔阿里云盘上了 不会用git传大文件qaq~~**
 
     **(6.18update) 垃圾阿里云分享不了压缩包，只能扔 [百度云](https://pan.baidu.com/s/15Axo2MRKnPNG9qrEiedMYA) 了 pwd: 3940**
 
