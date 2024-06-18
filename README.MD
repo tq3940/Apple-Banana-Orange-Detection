@@ -91,7 +91,9 @@
 
 - 在本仓库中，我也上传了我们小组收集到的一些数据集，总共应该有将近1w张了吧
  
-    **(update) 扔 [阿里云盘](https://www.alipan.com/s/MCydFDCe9gh) 上了 pwd: l4d9  ~~不会用git传大文件qaq~~**
+    **~~(update) 扔 [阿里云盘](https://www.alipan.com/s/MCydFDCe9gh) 上了 pwd: l4d9  不会用git传大文件qaq~~**
+
+    **(6.18update) 垃圾阿里云分享不了压缩包，只能扔 [百度云](https://pan.baidu.com/s/15Axo2MRKnPNG9qrEiedMYA) 了 pwd: 3940**
 
     image文件夹为图片+xml标注，data文件夹为将图片和标注转换为的TFRecord格式，用来给TensorFlow读入，因为前前后后收集过好几次数据集，因此总共有4个文件夹
 
